@@ -3,13 +3,13 @@ import bcryptjs from "bcryptjs";
 import { createAccessToken } from "../libs/jwt.js";
 
 export const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const passwordHash = await bcryptjs.hash(password, 10);
 
     const newUser = new User({
-      name,
+      username,
       email,
       password: passwordHash,
     });
@@ -20,7 +20,7 @@ export const register = async (req, res) => {
     res.cookie("token", token);
     res.json({
       id: userSaved._id,
-      name: userSaved.name,
+      username: userSaved.username,
       email: userSaved.email,
       createdAt: userSaved.createdAt,
     });
@@ -45,7 +45,7 @@ export const login = async (req, res) => {
     res.cookie("token", token);
     res.json({
       id: userFound._id,
-      name: userFound.name,
+      username: userFound.username,
       email: userFound.email,
       createdAt: userFound.createdAt,
     });
@@ -68,6 +68,6 @@ export const profile = async (req, res) => {
   return res.json({
     id: userFound._id,
     email: userFound.email,
-    name: userFound.name,
+    username: userFound.username,
   });
 };
