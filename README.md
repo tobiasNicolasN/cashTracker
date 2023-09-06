@@ -45,9 +45,100 @@ You can use tools like [Thunder Client](https://www.thunderclient.com/) to make 
 
 ## API Endpoints
 
-- "/api/register:" Register in the application.
-- "/api/login:" Log-in to the application.
-- "/api/logout:" Log-out of the application.
-- "/api/profile:" Route for display user data.
-- "/api/expenses:" Routes for upload and display expenses.
-- "/api/expenses/id:" Routes for delete and update a specific expense.
+### EndPoint: /api/register
+
+- HTTP Method: `POST`
+- Description: Register in the application.
+- Required Permissions: Public.
+- Request Data Structure:
+  - JSON Object:
+  
+  `{
+    "username" : "someUsername",
+    "email" : "some@email.com",
+    "password" : "somePassword"
+  }`
+  
+  - username: string(at least 4 characters)
+  - email: string
+  - password: string(at least 8 characters)
+
+### EndPoint: /api/login
+
+- HTTP Method: `POST`
+- Description: Log-in to the application.
+- Required Permissions: Registered users.
+- Request Data Structure:
+  - JSON Object:
+  
+  `{
+    "email" : "some@email.com",
+    "password" : "somePassword"
+  }`
+  
+  - email: string
+  - password: string
+    
+### EndPoint: /api/logout
+
+- HTTP Method: `POST`
+- Description: Log-out to the application.
+- Required Permissions: Authenticated.
+
+### EndPoint: /api/profile
+
+- HTTP Method: `GET`
+- Description: Display user data.
+- Required Permissions: Authenticated.
+
+### EndPoint: /api/expenses
+
+- HTTP Method: `GET`
+- Description: Display expenses.
+- Required Permissions: Authenticated.
+
+- HTTP Method: `POST`
+- Description: Upload expense.
+- Required Permissions: Authenticated.
+- Request Data Structure:
+  - JSON Object:
+  
+  `{
+    "amount" : 1234,
+    "category" : "someCategory",
+    "detail" : "someDetail",
+    "date" : "0000-00-00T00:00:00Z"
+  }`
+
+  - amount: number
+  - category: string
+  - detail: string(optional)
+  - date: string(Date Format - optional)
+
+### EndPoint: /api/expenses/id
+
+- HTTP Method: `GET`
+- Description: Display expense.
+- Required Permissions: Authenticated.
+    
+- HTTP Method: `PUT`
+- Description: Update expense.
+- Required Permissions: Authenticated.
+- Request Data Structure:
+  - JSON Object:
+  
+  `{
+    "amount" : 1234,
+    "category" : "someCategory",
+    "detail" : "someDetail",
+    "date" : "0000-00-00T00:00:00Z"
+  }`
+
+  - amount: number
+  - category: string
+  - detail: string(optional)
+  - date: string(Date Format - optional)
+    
+- HTTP Method: `DELETE`
+- Description: Delete expense.
+- Required Permissions: Authenticated.
