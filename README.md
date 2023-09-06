@@ -27,7 +27,7 @@ The dependencies used in this project include:
 
 To install these dependencies, run:
 
-  `npm install bcryptjs cookie-parser express jsonwebtoken mongoose morgan zod`
+  `npm install`
 
 3. Locate the 'src/config.js' file in the project and configure the necessary environment variables:
    
