@@ -10,10 +10,12 @@ Make sure you have the following installed before getting started:
 ## Configuration
 
 1. Clone this repository to your local machine:
-> git clone https://github.com/tobiasNicolasN/cashTracker-Backend.git
-> cd cashTracker-Backend
 
-2. Install project dependencies:
+  `git clone https://github.com/tobiasNicolasN/cashTracker-Backend.git`
+  
+  `cd cashTracker-Backend`
+
+3. Install project dependencies:
 The dependencies used in this project include:
 - bcryptjs: For password encryption.
 - cookie-parser: For handling cookies.
@@ -24,18 +26,25 @@ The dependencies used in this project include:
 - zod: For data validation.
 
 To install these dependencies, run:
-> npm install bcryptjs cookie-parser express jsonwebtoken mongoose morgan zod
+
+  `npm install bcryptjs cookie-parser express jsonwebtoken mongoose morgan zod`
 
 3. Locate the 'src/config.js' file in the project and configure the necessary environment variables:
-> PORT=3000
-> MONGODB_URI = "URL of your mongodb database"
-> TOKEN_SECRET="Your secret key for token"
-Make sure to replace URL_of_your_MongoDB_database with the URL of your MongoDB database and Your_Secret_Key_For_Tokens with a secure key for JWT token generation.
+   
+  `PORT=3000`
+
+  `MONGODB_URI = "URL of your mongodb database"`
+
+  `TOKEN_SECRET="Your secret key for token"`
+
+Make sure to replace MONGODB_URI with the URL of your MongoDB database and TOKEN_SECRET with a secure key for JWT token generation.
 
 ## Usage
 
 1. Start the server:
-> npm start
+  
+  `npm start`
+
 The server will run on the port specified in the config.js file (default is port 3000).
 
 You can use tools like [Thunder Client](https://www.thunderclient.com/) to make HTTP requests to the API.
