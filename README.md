@@ -15,15 +15,9 @@ Make sure you have the following installed before getting started:
   
   `cd cashTracker-Backend`
 
-3. Install project dependencies:
-The dependencies used in this project include:
-- bcryptjs: For password encryption.
-- cookie-parser: For handling cookies.
-- express: For creating the web application.
-- jsonwebtoken: For JWT-based authentication.
-- mongoose: For interacting with the MongoDB database.
-- morgan: For logging HTTP requests.
-- zod: For data validation.
+2. Install project dependencies:
+   
+The dependencies used in this project are included in "package.json":
 
 To install these dependencies, run:
 
@@ -49,7 +43,7 @@ The server will run on the port specified in the config.js file (default is port
 
 You can use tools like [Thunder Client](https://www.thunderclient.com/) to make HTTP requests to the API.
 
-## API Routes
+## API Endpoints
 
 - "/api/register:" Register in the application.
 - "/api/login:" Log-in to the application.
