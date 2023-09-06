@@ -31,11 +31,11 @@ To install these dependencies, run:
 
 3. Locate the 'src/config.js' file in the project and configure the necessary environment variables:
    
-  `PORT=3000`
+  `PORT = 3000`
 
   `MONGODB_URI = "URL of your mongodb database"`
 
-  `TOKEN_SECRET="Your secret key for token"`
+  `TOKEN_SECRET = "Your secret key for token"`
 
 Make sure to replace MONGODB_URI with the URL of your MongoDB database and TOKEN_SECRET with a secure key for JWT token generation.
 
